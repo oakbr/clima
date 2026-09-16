@@ -609,8 +609,11 @@ body {
   }
 
   #weather-summary {
+    width: 100%;
     min-height: auto;
     padding: 24px 20px 26px;
+    color: #e9f4f0;
+    background-color: var(--weather-accent-dark);
   }
 
   #weather-summary .summary-temperature {
