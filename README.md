@@ -102,4 +102,4 @@ src/
 
 ## Licença
 
-Este projeto foi desenvolvido para fins de estudo e demonstração.
+Atenção: Este projeto foi desenvolvido para fins de estudo e demonstração.
