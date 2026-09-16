@@ -4,6 +4,12 @@ Aplicação web para consultar o clima atual de qualquer cidade do mundo.
 
 O usuário informa o nome de uma cidade e recebe as condições meteorológicas atuais, incluindo temperatura, umidade, sensação térmica, chuva, precipitação e vento.
 
+## Acesso online
+
+Acesse a aplicação publicada no GitHub Pages:
+
+[https://oakbr.github.io/clima/](https://oakbr.github.io/clima/)
+
 ## Funcionalidades
 
 - Busca de cidades de qualquer país.
