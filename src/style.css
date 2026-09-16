@@ -333,6 +333,14 @@ body {
   margin: 0 auto;
 }
 
+#app-footer {
+  width: min(100%, 1040px);
+  margin: 28px auto 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 #search-region {
   padding: 48px 0 32px;
   background: transparent;

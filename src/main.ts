@@ -63,6 +63,7 @@ app.innerHTML = `
 		</section>
 	</section>
 </main>
+<footer id="app-footer">Criado por oakbr</footer>
 `
 
 createIcons({ icons: iconSet })
