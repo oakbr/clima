@@ -2,9 +2,9 @@
 
 Este documento registra o que foi implementado em cada tarefa do projeto Clima.
 
-- Requisitos completos: [PRD](../.docs/prd.md)
-- Checklist de tarefas: [tasks.md](../.docs/tasks.md)
-- Controle por fases: [implementation-phases.md](../.docs/implementation-phases.md)
+- Requisitos completos: [PRD](prd.md)
+- Checklist de tarefas: [tasks.md](tasks.md)
+- Controle por fases: [implementation-phases.md](implementation-phases.md)
 
 ## T01 - Preparar a estrutura inicial
 
@@ -35,7 +35,9 @@ Este documento registra o que foi implementado em cada tarefa do projeto Clima.
 - Criado `geocodeCity` em `src/services/open-meteo.ts`.
 - Implementada consulta ao endpoint de geocodificação da Open-Meteo.
 - A busca aceita cidades de qualquer país.
-- Utilizados `URLSearchParams`, `count=1`, `language=pt` e `format=json`.
+- Utilizados `URLSearchParams`, `count=1`, `language=en` e `format=json`.
+- O idioma técnico em inglês melhora o ranking de nomes compostos e evita que `New York` seja retornado incorretamente como `York`.
+- Adicionada tradução de países comuns para português na camada normalizada, como `United States` para `Estados Unidos`.
 - Adicionada validação dos campos essenciais:
   - Nome.
   - País.
@@ -148,11 +150,13 @@ Este documento registra o que foi implementado em cada tarefa do projeto Clima.
 - Aplicado fundo geral cinza escuro.
 - Mantida a área superior sem faixa de fundo própria.
 - Busca centralizada com campo e botão.
-- Criado painel branco centralizado com largura máxima de 800 px.
+- Criado painel branco centralizado com largura máxima de 1040 px para evitar congestionamento de informações.
 - Sidebar posicionada à esquerda.
 - Área de detalhes posicionada à direita.
 - Criados estilos para cartões de dados, estados, foco e interação.
 - Removidos visualmente os estilos ativos do template inicial do Vite.
+- Sidebar ampliada para 300 px e configurada para quebra segura de nomes, datas e rótulos longos.
+- Título do estado vazio e tipografia da sidebar reduzidos para melhorar a hierarquia visual.
 
 ## T13 - Implementar responsividade mobile e tablet
 
@@ -175,6 +179,8 @@ Este documento registra o que foi implementado em cada tarefa do projeto Clima.
 - Ícones decorativos não são anunciados por leitores de tela.
 - Textos visíveis da aplicação estão em português do Brasil.
 - Contraste revisado para fundo, painel, textos e mensagens.
+- Adicionado rodapé semântico com a informação `Criado por oakbr`.
+- Adicionados comentários de rastreabilidade nos principais blocos de código, identificando as tasks relacionadas.
 
 ## T15 - Validar integração e cenários de erro
 
@@ -196,11 +202,30 @@ Durante a validação foram corrigidos dois problemas encontrados:
 - `current_units.is_day` pode ser uma string vazia e não deve ser rejeitado pelo validador.
 - A formatação de data não deve converter o nome localizado do mês diretamente para número.
 
+## Atualizações posteriores às tasks
+
+### Preparação para GitHub Pages
+
+- Criado `vite.config.ts` com base de produção `/clima/`, correspondente ao repositório `oakbr/clima`.
+- Criado `.github/workflows/deploy.yml` para executar CI/CD em cada push na branch `main`.
+- O workflow instala dependências com `npm ci`, executa `npm run build`, gera o artefato `dist` e publica com as actions oficiais do GitHub Pages.
+- Adicionada execução manual do workflow com `workflow_dispatch`.
+- Configurado controle de concorrência para cancelar deploys anteriores quando houver uma publicação mais recente.
+- Corrigido o caminho do favicon para funcionar em subdiretório no GitHub Pages.
+
+### Organização do repositório
+
+- Criado `README.md` na raiz com instruções de instalação, execução, build, uso, API e estrutura do projeto.
+- Mantido `.docs/README.md` como documentação complementar.
+- Resolvidos os marcadores de conflito do `README.md`.
+- Consolidado o `.gitignore` para Node, Vite, TypeScript, dependências, build, logs, ambientes e arquivos de IDE.
+
 ## T16 - Executar a validação final do projeto
 
 - `npm run build` executado com sucesso.
 - Removido o arquivo legado `src/counter.ts`.
 - Confirmada a ausência de referências ativas ao template inicial do Vite.
-- Todas as 16 tasks foram marcadas como concluídas em [tasks.md](../.docs/tasks.md).
-- Todas as 8 fases foram marcadas como concluídas em [implementation-phases.md](../.docs/implementation-phases.md).
+- Todas as 16 tasks foram marcadas como concluídas em [tasks.md](tasks.md).
+- Todas as 8 fases foram marcadas como concluídas em [implementation-phases.md](implementation-phases.md).
+- O build de produção foi validado com `GITHUB_ACTIONS=true`, confirmando os caminhos `/clima/` dos assets.
 - O PRD, as tasks, as fases e a implementação permanecem alinhados.

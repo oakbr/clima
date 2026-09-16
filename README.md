@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# clima
-Pesquisa cidade e exibe dados sobre o clima.
-=======
 # Clima
 
 Aplicação web para consultar o clima atual de qualquer cidade do mundo.
@@ -80,7 +76,7 @@ O projeto utiliza dois endpoints públicos da Open-Meteo:
 - [Open-Meteo Geocoding API](https://geocoding-api.open-meteo.com/v1/search)
 - [Open-Meteo Forecast API](https://api.open-meteo.com/v1/forecast)
 
-A interface não realiza requisições diretamente. O acesso à API está concentrado em [`src/services/open-meteo.ts`](../src/services/open-meteo.ts).
+A interface não realiza requisições diretamente. O acesso à API está concentrado em [`src/services/open-meteo.ts`](src/services/open-meteo.ts).
 
 ## Estrutura principal
 
@@ -99,12 +95,11 @@ src/
 
 ## Documentação
 
-- [PRD](prd.md): requisitos funcionais, técnicos e visuais.
-- [Tasks](tasks.md): tarefas e critérios de aprovação.
-- [Fases de implementação](implementation-phases.md): acompanhamento por fases.
-- [Resumo da implementação](implementation-summary.md): registro do que foi implementado em cada task.
+- [PRD](.docs/prd.md): requisitos funcionais, técnicos e visuais.
+- [Tasks](.docs/tasks.md): tarefas e critérios de aprovação.
+- [Fases de implementação](.docs/implementation-phases.md): acompanhamento por fases.
+- [Resumo da implementação](docs/implementation-summary.md): registro do que foi implementado em cada task.
 
 ## Licença
 
 Este projeto foi desenvolvido para fins de estudo e demonstração.
->>>>>>> 7679ab5 (Adding READE.md)
