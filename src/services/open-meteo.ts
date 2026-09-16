@@ -21,7 +21,7 @@ export async function geocodeCity(city: string): Promise<GeocodingResult> {
   const searchParams = new URLSearchParams({
     name: normalizedCity,
     count: '1',
-    language: 'pt',
+    language: 'en',
     format: 'json',
   })
 
@@ -107,7 +107,7 @@ export async function searchWeather(city: string): Promise<WeatherData> {
   return {
     location: {
       city: location.name,
-      country: location.country,
+      country: translateCountry(location.country),
       countryCode: location.country_code,
       latitude: location.latitude,
       longitude: location.longitude,
@@ -151,6 +151,17 @@ function isValidGeocodingResult(result: GeocodingResult): boolean {
     typeof result.timezone === 'string' &&
     result.timezone.length > 0,
   )
+}
+
+function translateCountry(country: string): string {
+  const translations: Record<string, string> = {
+    Brazil: 'Brasil',
+    Canada: 'Canadá',
+    'United Kingdom': 'Reino Unido',
+    'United States': 'Estados Unidos',
+  }
+
+  return translations[country] ?? country
 }
 
 // T04: valida a estrutura externa antes de entregá-la ao fluxo da aplicação.

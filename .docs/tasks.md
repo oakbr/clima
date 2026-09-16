@@ -39,7 +39,7 @@ Implementar no módulo de Open-Meteo a função que recebe o nome da cidade, cod
 
 **Critérios de aprovação**
 
-- A URL usa `count=1`, `language=pt` e não contém `countryCode=BR`.
+- A URL usa `count=1`, `language=en` e não contém `countryCode=BR`.
 - A função trata resposta HTTP inválida, resposta sem resultados e erro de parsing.
 - A função retorna somente os dados de localização necessários ou um erro controlável pela aplicação.
 - A interface não chama `fetch` diretamente para geocodificação.

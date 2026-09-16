@@ -44,7 +44,7 @@ O campo deve impedir consultas vazias ou compostas apenas por espaços, apresent
 
 Ao receber uma busca válida, o sistema deve consultar o endpoint de geocodificação do Open-Meteo:
 
-`https://geocoding-api.open-meteo.com/v1/search?name={NOME_DA_CIDADE}&count=1&language=pt&format=json`
+`https://geocoding-api.open-meteo.com/v1/search?name={NOME_DA_CIDADE}&count=1&language=en&format=json`
 
 Devem ser considerados, no mínimo, os seguintes dados do primeiro resultado:
 
@@ -154,7 +154,7 @@ O código da interface não deve montar URLs nem chamar diretamente `fetch` para
 ### Fluxo técnico
 
 1. Capturar e normalizar o nome informado pelo usuário.
-2. Consultar a geocodificação com `count=1` e idioma `pt`, sem restringir o país.
+2. Consultar a geocodificação com `count=1` e idioma `en`, sem restringir o país, para melhorar a identificação de nomes compostos e internacionais.
 3. Validar a existência de um resultado e dos campos necessários.
 4. Consultar o clima atual com as coordenadas e o fuso retornados.
 5. Validar `current` e `current_units` antes de montar a visualização.
